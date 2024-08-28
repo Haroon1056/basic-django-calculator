@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Calculator</title>
+    </head>
+    <body>
+        {% extends "base.html" %}
+        {%block content%}
+        
+        <form method="POST" class="form-control">
+            {% csrf_token %}
+            <h1>Calculator</h1>
+            <label>Value 1</label>
+            <input type="text" name="val1" class="form-control"/>
+            <label>Operator</label>
+            <select name="opt" class="form-control">
+                <option Value="+">+</option>
+                <option Value="-">-</option>
+                <option Value="*">*</option>
+                <option Value="/">/</option>
+            </select>
+            <label>Value 2</label>
+            <input type="text" name="val2" class="form-control"/><br/>
+            <button type="submit" class="btn btn-secondary">Calculator</button><br/>
+            <label>Output</label>
+            <input type="text" class="form-control" Value={{c}}>
+
+        </form>
+        {% endblock %}
+    </body>
+</html>
